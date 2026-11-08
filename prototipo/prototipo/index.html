@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>EVOLI — Protótipo da app | Equipa DKL_05 · ISEP</title>
+<meta name="description" content="Protótipo interativo da aplicação EVOLI: despensa anti-desperdício, pausas ativas e um mundo que floresce. Equipa DKL_05 · LAPR1 · ISEP.">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<aside class="side">
+  <h1>EVOLI</h1>
+  <p>Protótipo interativo da app. Toca nos botões: regista ingredientes, faz pausas, cumpre missões e vê o mundo da EVOLI mudar.</p>
+  <p><small>Equipa DKL_05 · LAPR1 · ISEP · Sprint 2 · © 2026</small></p>
+  <p><small>O progresso fica guardado no teu navegador.</small></p>
+  <button class="rst" id="reiniciar" data-testid="btn-reiniciar">Reiniciar protótipo</button>
+</aside>
+
+<main class="phone" aria-label="Protótipo da app EVOLI">
+  <div class="toast" id="toast" role="status" aria-live="polite" data-testid="toast"><span id="toastIco">🌱</span><div id="toastTxt"></div></div>
+  <div class="screen" id="screen" data-testid="app-screen"></div>
+  <nav class="tabs" role="tablist" aria-label="Navegação principal" id="tabs"></nav>
+</main>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>
