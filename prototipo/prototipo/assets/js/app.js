@@ -1,7 +1,8 @@
 "use strict";
-/* EVOLI — Protótipo da app · Equipa DKL_05 · ISEP · Sprint 2
+/* EVOLI — Protótipo da app · Equipa DKL_05 · ISEP · Sprint 3
    Protótipo funcional com dados fictícios. O progresso fica guardado
-   apenas neste navegador (localStorage); missões recomeçam a cada dia. */
+   apenas neste navegador (localStorage); missões recomeçam a cada dia.
+   Nota: o tempo de ecrã é simulado (não mede o uso real do dispositivo). */
 const LS = "evoli_prototipo_v2";
 const HOJE = new Date().toISOString().slice(0, 10);
 
@@ -110,11 +111,32 @@ function addItem(){
   save(); render();
   toast(n + ' adicionado à despensa.', '🥕');
 }
+
+/* Receitas: escolhe a que aproveita mais ingredientes a expirar (≤ 3 dias). */
+const RECEITAS = [
+  {k:['arroz','tomate','espinafre'], t:'Arroz de tomate com espinafres',
+   d:'Refoga <b>{ing}</b> com cebola e azeite, junta um pouco de água e deixa apurar 10 min.<br><small>⏱ 15 min · 💶 menos de 1,50 € por dose</small>'},
+  {k:['tomate','espinafre'], t:'Salada morna de tomate e espinafres',
+   d:'Salteia <b>{ing}</b> 3 min com alho e azeite. Serve morno.<br><small>⏱ 8 min · 💶 menos de 1 € por dose</small>'},
+  {k:['iogurte'], t:'Taça de iogurte com aveia',
+   d:'Mistura <b>{ing}</b> com aveia e o que tiveres de fruta ou mel.<br><small>⏱ 3 min · 💶 menos de 1 € por dose</small>'},
+  {k:['arroz'], t:'Arroz salteado de aproveitamento',
+   d:'Salteia <b>{ing}</b> em lume forte com um fio de azeite e tempera a gosto.<br><small>⏱ 10 min · 💶 menos de 1 € por dose</small>'}
+];
+const RECEITA_GENERICA = {t:'Salteado de aproveitamento',
+  d:'Usa <b>{ing}</b>. Salteia tudo em lume forte com um fio de azeite, tempera a gosto e serve.<br><small>⏱ 15 min · 💶 menos de 1,50 € por dose</small>'};
+
 function gen(){
   const exp = S.pantry.filter(i => i.d <= 3);
   if (!exp.length){ toast('Nada a expirar nos próximos 3 dias. Boa gestão!', '👏'); return; }
-  const names = exp.map(i => i.n.toLowerCase());
-  S.recipe = {ids:exp.map(i => i.n), t:'Arroz salteado de aproveitamento', d:'Usa <b>' + names.join(', ') + '</b>. Salteia tudo em lume forte com um fio de azeite, tempera a gosto e serve. <br><small>⏱ 15 min · 💶 menos de 1,50 € por dose</small>'};
+  let best = null, usados = [];
+  RECEITAS.forEach(r => {
+    const u = exp.filter(i => r.k.some(k => i.n.toLowerCase().includes(k)));
+    if (u.length > usados.length){ best = r; usados = u; }
+  });
+  if (!best){ best = RECEITA_GENERICA; usados = exp; }
+  const nomes = usados.map(i => i.n.toLowerCase()).join(', ');
+  S.recipe = {ids: usados.map(i => i.n), t: best.t, d: best.d.replace('{ing}', nomes)};
   save(); render();
 }
 function cook(){
@@ -181,7 +203,7 @@ function wear(id){
   S.worn[id] = !S.worn[id];
   save(); render();
 }
-function go(t){ S.tab = t; if (t === 'despensa') S.recipe = S.recipe; save(); render(); $('#screen').scrollTop = 0; }
+function go(t){ S.tab = t; save(); render(); $('#screen').scrollTop = 0; }
 const V = {casa, despensa, pausas, mundo, loja};
 
 function render(){
@@ -191,7 +213,10 @@ function render(){
   $('#tabs').innerHTML = TABS.map(t => `<button class="tab" role="tab" aria-selected="${t[0]===S.tab}" data-testid="tab-${t[0]}" onclick="go('${t[0]}')"><span>${t[1]}</span>${t[2]}</button>`).join('');
 }
 render();
-setTimeout(() => { if (S.tab === 'casa') toast('EVOLI: “Já estás há 47 min no ecrã. Pausa?”', '🔔'); }, 2500);
+setTimeout(() => {
+  if (S.tab === 'casa' && S.screenMin >= 45)
+    toast('EVOLI: “Já estás há ' + S.screenMin + ' min no ecrã. Pausa?”', '🔔');
+}, 2500);
 
 /* Reiniciar protótipo (painel lateral) */
 document.getElementById('reiniciar').addEventListener('click', () => {
