@@ -317,95 +317,118 @@
     </section>
 
     <!-- ================= 04 ESTADO DA ARTE ================= -->
-    <section class="sec sec-oat" id="comparacao" aria-labelledby="comparacao-title">
-      <div class="container-xxl">
-        <p class="sec-label mono" data-reveal>04 — Estado da arte num minuto</p>
-        <h2 id="comparacao-title" data-reveal>O que já existe — <span class="it">e o que falta.</span></h2>
-        <p class="lead-sub" data-reveal data-reveal-delay="80" data-testid="sota-intro">
-          Analisámos três aplicações de referência. Cada uma resolve uma parte do problema;
-          nenhuma o resolve por inteiro.
-        </p>
+    
+<section class="sec sec-oat" id="comparacao" aria-labelledby="comparacao-title">
+  <div class="container-xxl">
+    <p class="sec-label mono" data-reveal>04 — Estado da arte num minuto</p>
+    <h2 id="comparacao-title" data-reveal>O que já existe — <span class="it">e porque somos diferentes.</span></h2>
+    <p class="lead-sub" data-reveal data-reveal-delay="80" data-testid="sota-intro">
+      Analisámos três aplicações de referência. Embora sejam soluções úteis nas respetivas áreas,
+      a EVOLI distingue-se por integrar funcionalidades que estas aplicações não disponibilizam
+      em conjunto, respondendo de forma mais completa às necessidades dos estudantes universitários.
+    </p>
 
-        <div class="row g-4 mt-2">
-          <div class="col-lg-4 col-md-6" data-reveal data-testid="sota-card-forest">
-            <div class="comp-card">
-              <h3 class="comp-name">Forest</h3>
-              <span class="comp-sub mono">Seekrtech</span>
-              <p>Gamificação para reduzir o tempo de ecrã: plantas uma árvore virtual que cresce enquanto te manténs focado; as moedas podem ser trocadas por árvores reais.</p>
-              <div class="comp-gap" data-testid="sota-gap-forest"><strong>O que falta —</strong> foca-se apenas no tempo de ecrã: sem movimento físico nem atenção à alimentação.</div>
-            </div>
+    <div class="row g-4 mt-2">
+      <div class="col-lg-4 col-md-6" data-reveal data-testid="sota-card-forest">
+        <div class="comp-card">
+          <h3 class="comp-name">Forest</h3>
+          <span class="comp-sub mono">Seekrtech</span>
+          <p>Utiliza a gamificação para incentivar a concentração: uma árvore virtual cresce enquanto o utilizador se mantém focado, podendo as moedas acumuladas contribuir para a plantação de árvores reais.</p>
+          <div class="comp-gap" data-testid="sota-gap-forest">
+            <strong>Porque somos melhores —</strong>
+            A EVOLI não se limita à gestão do tempo de ecrã. Incentiva também pausas ativas,
+            hidratação e hábitos alimentares sustentáveis, promovendo o bem-estar de forma mais abrangente.
           </div>
-          <div class="col-lg-4 col-md-6" data-reveal data-reveal-delay="90" data-testid="sota-card-tgtg">
-            <div class="comp-card">
-              <h3 class="comp-name">Too Good To Go</h3>
-              <span class="comp-sub mono">Too Good To Go</span>
-              <p>Compra excedentes alimentares de padarias e restaurantes em "Surprise Bags" com desconto, evitando que vá tudo para o lixo.</p>
-              <div class="comp-gap" data-testid="sota-gap-tgtg"><strong>O que falta —</strong> foca-se na comida do comércio: não ajuda a aproveitar o que já tens em casa.</div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6" data-reveal data-reveal-delay="180" data-testid="sota-card-supercook">
-            <div class="comp-card">
-              <h3 class="comp-name">SuperCook</h3>
-              <span class="comp-sub mono">AMR Systems</span>
-              <p>Receitas feitas apenas com os ingredientes que já tens em casa, a partir de uma lista de mais de 2000 opções e mais de 11 milhões de receitas.</p>
-              <div class="comp-gap" data-testid="sota-gap-supercook"><strong>O que falta —</strong> sem prazos de validade, sem recompensas, sem estímulo ao movimento ou às pausas.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="matrix-wrap" data-reveal>
-          <table class="matrix" data-testid="sota-matrix">
-            <thead>
-              <tr>
-                <th scope="col">Critério</th>
-                <th scope="col">Forest</th>
-                <th scope="col">Too Good To Go</th>
-                <th scope="col">SuperCook</th>
-                <th scope="col" class="col-evoli">EVOLI</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr data-testid="matrix-row-gamification">
-                <td>Gamificação</td>
-                <td><span class="mk mk-yes"><i class="bi bi-check-lg"></i></span></td>
-                <td><span class="mk mk-no"><i class="bi bi-x-lg"></i></span></td>
-                <td><span class="mk mk-no"><i class="bi bi-x-lg"></i></span></td>
-                <td class="col-evoli"><span class="mk mk-yes"><i class="bi bi-check-lg"></i></span></td>
-              </tr>
-              <tr data-testid="matrix-row-waste">
-                <td>Desperdício alimentar</td>
-                <td><span class="mk mk-no"><i class="bi bi-x-lg"></i></span></td>
-                <td><span class="mk mk-yes"><i class="bi bi-check-lg"></i></span> <small class="text-secondary">comércio</small></td>
-                <td><span class="mk mk-yes"><i class="bi bi-check-lg"></i></span> <small class="text-secondary">casa</small></td>
-                <td class="col-evoli"><span class="mk mk-yes"><i class="bi bi-check-lg"></i></span> <small class="text-secondary">casa</small></td>
-              </tr>
-              <tr data-testid="matrix-row-breaks">
-                <td>Pausas ativas e movimento</td>
-                <td><span class="mk mk-no"><i class="bi bi-x-lg"></i></span></td>
-                <td><span class="mk mk-no"><i class="bi bi-x-lg"></i></span></td>
-                <td><span class="mk mk-no"><i class="bi bi-x-lg"></i></span></td>
-                <td class="col-evoli"><span class="mk mk-yes"><i class="bi bi-check-lg"></i></span></td>
-              </tr>
-              <tr data-testid="matrix-row-student">
-                <td>Foco no estudante universitário</td>
-                <td><span class="mk mk-part">±</span></td>
-                <td><span class="mk mk-part">±</span></td>
-                <td><span class="mk mk-part">±</span></td>
-                <td class="col-evoli"><span class="mk mk-yes"><i class="bi bi-check-lg"></i></span></td>
-              </tr>
-              <tr data-testid="matrix-row-climate">
-                <td>Impacto climático visível</td>
-                <td><span class="mk mk-part">±</span> <small class="text-secondary">árvores reais</small></td>
-                <td><span class="mk mk-yes"><i class="bi bi-check-lg"></i></span></td>
-                <td><span class="mk mk-no"><i class="bi bi-x-lg"></i></span></td>
-                <td class="col-evoli"><span class="mk mk-yes"><i class="bi bi-check-lg"></i></span></td>
-              </tr>
-            </tbody>
-          </table>
-          <p class="matrix-note" data-testid="sota-matrix-note">Análise completa e fontes na secção <a href="#fontes" class="sage">06 — Fontes</a>.</p>
         </div>
       </div>
-    </section>
+
+      <div class="col-lg-4 col-md-6" data-reveal data-reveal-delay="90" data-testid="sota-card-tgtg">
+        <div class="comp-card">
+          <h3 class="comp-name">Too Good To Go</h3>
+          <span class="comp-sub mono">Too Good To Go</span>
+          <p>Permite comprar excedentes alimentares de restaurantes e estabelecimentos comerciais através de Surprise Bags, contribuindo para reduzir o desperdício alimentar.</p>
+          <div class="comp-gap" data-testid="sota-gap-tgtg">
+            <strong>Porque somos melhores —</strong>
+            A EVOLI atua diretamente na despensa do utilizador, ajudando a controlar prazos de validade
+            e a criar receitas com ingredientes que já tem em casa, sem depender de estabelecimentos comerciais.
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6" data-reveal data-reveal-delay="180" data-testid="sota-card-supercook">
+        <div class="comp-card">
+          <h3 class="comp-name">SuperCook</h3>
+          <span class="comp-sub mono">AMR Systems</span>
+          <p>Apresenta receitas com base nos ingredientes que o utilizador tem disponíveis em casa, permitindo descobrir refeições sem precisar de comprar ingredientes adicionais.</p>
+          <div class="comp-gap" data-testid="sota-gap-supercook">
+            <strong>Porque somos melhores —</strong>
+            A EVOLI vai além da sugestão de receitas: considera os prazos de validade,
+            incentiva pausas ativas e utiliza uma mascote virtual e recompensas para motivar
+            a adoção continuada de hábitos saudáveis e sustentáveis.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="matrix-wrap" data-reveal>
+      <table class="matrix" data-testid="sota-matrix">
+        <thead>
+          <tr>
+            <th scope="col">Critério</th>
+            <th scope="col">Forest</th>
+            <th scope="col">Too Good To Go</th>
+            <th scope="col">SuperCook</th>
+            <th scope="col" class="col-evoli">EVOLI</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-testid="matrix-row-gamification">
+            <td>Gamificação</td>
+            <td><span class="mk mk-yes"><i class="bi bi-check-lg"></i></span></td>
+            <td><span class="mk mk-no"><i class="bi bi-x-lg"></i></span></td>
+            <td><span class="mk mk-no"><i class="bi bi-x-lg"></i></span></td>
+            <td class="col-evoli"><span class="mk mk-yes"><i class="bi bi-check-lg"></i></span></td>
+          </tr>
+          <tr data-testid="matrix-row-waste">
+            <td>Desperdício alimentar</td>
+            <td><span class="mk mk-no"><i class="bi bi-x-lg"></i></span></td>
+            <td><span class="mk mk-yes"><i class="bi bi-check-lg"></i></span> <small class="text-secondary">comércio</small></td>
+            <td><span class="mk mk-yes"><i class="bi bi-check-lg"></i></span> <small class="text-secondary">casa</small></td>
+            <td class="col-evoli"><span class="mk mk-yes"><i class="bi bi-check-lg"></i></span> <small class="text-secondary">casa + validades</small></td>
+          </tr>
+          <tr data-testid="matrix-row-breaks">
+            <td>Pausas ativas e movimento</td>
+            <td><span class="mk mk-no"><i class="bi bi-x-lg"></i></span></td>
+            <td><span class="mk mk-no"><i class="bi bi-x-lg"></i></span></td>
+            <td><span class="mk mk-no"><i class="bi bi-x-lg"></i></span></td>
+            <td class="col-evoli"><span class="mk mk-yes"><i class="bi bi-check-lg"></i></span></td>
+          </tr>
+          <tr data-testid="matrix-row-student">
+            <td>Foco no estudante universitário</td>
+            <td><span class="mk mk-part">±</span></td>
+            <td><span class="mk mk-part">±</span></td>
+            <td><span class="mk mk-part">±</span></td>
+            <td class="col-evoli"><span class="mk mk-yes"><i class="bi bi-check-lg"></i></span></td>
+          </tr>
+          <tr data-testid="matrix-row-climate">
+            <td>Impacto climático visível</td>
+            <td><span class="mk mk-part">±</span> <small class="text-secondary">árvores reais</small></td>
+            <td><span class="mk mk-yes"><i class="bi bi-check-lg"></i></span></td>
+            <td><span class="mk mk-no"><i class="bi bi-x-lg"></i></span></td>
+            <td class="col-evoli"><span class="mk mk-yes"><i class="bi bi-check-lg"></i></span></td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="matrix-note" data-testid="sota-matrix-note">
+        A principal vantagem da EVOLI é a integração: junta gestão de validades e receitas,
+        pausas ativas, gamificação e visualização do impacto climático numa só aplicação,
+        com foco na rotina dos estudantes.
+        Fontes na secção <a href="#fontes" class="sage">06 — Fontes</a>.
+      </p>
+    </div>
+  </div>
+</section>
+
 
     <!-- ================= 05 EQUIPA ================= -->
     <section class="sec" id="equipa" aria-labelledby="equipa-title">
