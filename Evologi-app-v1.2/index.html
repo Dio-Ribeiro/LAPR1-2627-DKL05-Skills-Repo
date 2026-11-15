@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>EVOLI — A tua mascote que cresce contigo</title>
+<meta name="description" content="App EVOLI: hábitos saudáveis, menos desperdício alimentar e um mundo que evolui contigo. Equipa DKL_05 · LAPR1 · ISEP." />
+<meta name="theme-color" content="#1B3B2B" />
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+<link rel="manifest" href="manifest.json" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/vendor/icons/bootstrap-icons.min.css" />
+<link rel="stylesheet" href="assets/css/app.css" />
+</head>
+<body>
+<div class="app-backdrop" aria-hidden="true">
+  <i class="bi bi-flower1 bb-leaf bb-1"></i>
+  <i class="bi bi-flower2 bb-leaf bb-2"></i>
+  <i class="bi bi-flower1 bb-leaf bb-3"></i>
+</div>
+
+<div class="app-shell" id="appShell" data-testid="app-shell">
+  <header class="app-header" data-testid="app-header">
+    <div class="ph-greet">
+      <p class="ph-hello" id="hdrGreet" data-testid="header-greeting">Olá</p>
+      <p class="ph-sub" id="hdrSub" data-testid="header-sub">Vamos cuidar do mundo?</p>
+    </div>
+    <div class="ph-right">
+      <span class="pill seeds" id="pillSeeds" data-testid="pill-seeds" title="Sementes">🌰 <b>0</b></span>
+      <span class="pill level" id="pillLevel" data-testid="pill-level" title="Nível">Nv <b>1</b></span>
+      <button class="avatar-btn" id="btnProfile" data-testid="btn-profile" aria-label="Abrir o meu perfil"><span class="avatar-sprout" aria-hidden="true"><i class="bi bi-flower2"></i></span></button>
+    </div>
+  </header>
+
+  <main class="app-main" id="viewRoot" data-testid="app-view" aria-live="polite"></main>
+
+  <nav class="tabbar" id="tabbar" data-testid="tabbar" role="tablist" aria-label="Navegação principal"></nav>
+</div>
+
+<div id="overlays" data-testid="overlays"></div>
+
+<script type="module" src="assets/js/main.js"></script>
+</body>
+</html>

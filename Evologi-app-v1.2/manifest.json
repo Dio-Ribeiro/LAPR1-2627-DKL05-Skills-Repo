@@ -1,0 +1,14 @@
+{
+  "name": "EVOLI",
+  "short_name": "EVOLI",
+  "description": "A tua mascote que cresce contigo: hábitos saudáveis, menos desperdício e um mundo que evolui.",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F7F4EE",
+  "theme_color": "#1B3B2B",
+  "icons": [
+    { "src": "assets/img/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
