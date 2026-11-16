@@ -336,7 +336,12 @@ figcaption { font-size: 0.82rem; color: var(--muted); margin-top: 0.9rem; }
   display: flex; align-items: center; justify-content: center;
   font-family: var(--font-display); font-weight: 700; font-size: 1.25rem;
   margin-bottom: 1.1rem;
-}
+} .team-photo {
+    width: 62px; height: 62px; border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 1.1rem;
+  }
 .mg-1 { background: rgba(61, 107, 80, 0.14); color: var(--sage); }
 .mg-2 { background: rgba(217, 119, 54, 0.14); color: var(--terra-dark); }
 .mg-3 { background: rgba(118, 160, 53, 0.18); color: #5C7F27; }
